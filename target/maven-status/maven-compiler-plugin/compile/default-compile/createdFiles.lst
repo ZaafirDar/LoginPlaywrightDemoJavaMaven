@@ -1,2 +1,3 @@
 com/orangehrm/locators/LoginPageLocators.class
+com/orangehrm/data/TestData.class
 com/orangehrm/pages/LoginPage.class
