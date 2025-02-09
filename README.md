@@ -21,13 +21,26 @@ This project demonstrates **how to automate UI testing** for a web application u
 playwrgiht-java-maven-demo
 ├── src
 │   ├── main
-│   │   └── java
-│   │       └── App.java
-│   └── test
-│       └── java
-│           └── AppTest.java
+│   │   ├── java
+│   │   │   ├── com
+│   │   │   │   ├── orangehrm
+│   │   │   │   │   ├── data
+│   │   │   │   │   │   ├── TestData.java
+│   │   │   │   │   ├── locators
+│   │   │   │   │   │   ├── LoginPageLocators.java
+│   │   │   │   │   ├── pages
+│   │   │   │   │   │   ├── LoginPage.java
+│   ├── test
+│   │   ├── java
+│   │   │   ├── com
+│   │   │   │   ├── orangehrm
+│   │   │   │   │   ├── tests
+│   │   │   │   │   │   ├── LoginTest.java
 ├── pom.xml
-└── README.md
+├── .github
+│   ├── workflows
+│   │   ├── playwright-ci.yml
+├── README.md
 ```
 ## Requirements
 
@@ -43,7 +56,25 @@ To build the project, navigate to the project directory and run:
 To run the tests, use the following command:
 
 ```
-mvn compile exec:java -D exec.mainClass="org.example.App"
+mvn clean test
 ```
+
+To run only specific file, use the following command, replace login with the file required:
+
+```
+mvn -Dtest=com.orangehrm.tests.LoginTest test
+```
+Generate Test Report
+
+```
+mvn surefire-report:report
+```
+Test Report can be accessed in local browser, 
+copy complete path of this file and paste it in the browser
+
+```
+target/site/surefire-report.html
+```
+
 ## Test Execution on GithubActions CI/CD pipline
 🔗 [Github Actions](https://github.com/ZaafirDar/LoginPlaywrightDemoJavaMaven/actions)
