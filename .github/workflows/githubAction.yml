@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '17'
 
       - name: Cache Maven Dependencies
         uses: actions/cache@v4
@@ -53,7 +53,7 @@ jobs:
         run: mvn exec:java -Dexec.mainClass="com.microsoft.playwright.CLI" -Dexec.args="install"
 
       - name: Run Playwright Tests
-        run: mvn compile exec:java -Dexec.mainClass="org.example.App"
+        run: xvfb-run --auto-servernum -- mvn test
 
       - name: Upload Test Reports
         if: always()
