@@ -1,1 +1,2 @@
-org/example/App.class
+com/orangehrm/locators/LoginPageLocators.class
+com/orangehrm/pages/LoginPage.class

@@ -18,7 +18,7 @@ This project demonstrates **how to automate UI testing** for a web application u
 
 ## **📂 Project Structure**
 ```
-my-java-project
+playwrgiht-java-maven-demo
 ├── src
 │   ├── main
 │   │   └── java
