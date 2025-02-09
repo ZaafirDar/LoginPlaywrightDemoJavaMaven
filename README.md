@@ -17,10 +17,23 @@ This project demonstrates **how to automate UI testing** for a web application u
 ---
 
 ## **📂 Project Structure**
-my-java-project ├── src │ ├── main │ │ ├── java │ │ │ ├── com │ │ │ │ ├── orangehrm │ │ │ │ │ ├── PlaywrightTestBase.java <-- ✅ Playwright setup file │ │ │ │ │ ├── LoginPage.java <-- ✅ Page Object Model (POM) for Login Page │ ├── test │ │ ├── java │ │ │ ├── com │ │ │ │ ├── orangehrm │ │ │ │ │ ├── LoginTest.java <-- ✅ JUnit Test for Login Automation ├── pom.xml <-- ✅ Maven configuration └── README.md
+```
+my-java-project
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── App.java
+│   └── test
+│       └── java
+│           └── AppTest.java
+├── pom.xml
+└── README.md
+```
 
 ## Running Tests locally
 
 To run the tests, use the following command:
 
+```
 mvn compile exec:java -D exec.mainClass="org.example.App"
+```
