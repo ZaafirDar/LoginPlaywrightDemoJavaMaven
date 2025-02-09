@@ -3,6 +3,7 @@ package com.orangehrm.pages;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Locator;
 import com.orangehrm.locators.LoginPageLocators;
+import com.orangehrm.data.TestData;
 
 public class LoginPage {
     private final Page page;
@@ -18,7 +19,7 @@ public class LoginPage {
     }
 
     public void navigateToLoginPage() {
-        page.navigate("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        page.navigate(TestData.BASE_URL);
     }
 
     public void enterUsername(String username) {
