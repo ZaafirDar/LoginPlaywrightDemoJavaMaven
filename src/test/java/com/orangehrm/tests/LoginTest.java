@@ -7,17 +7,12 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LoginTest {
-    private Playwright playwright;
-    private Browser browser;
-    private Page page;
+public class LoginTest extends BaseTest {
+     
     private LoginPage loginPage;
 
     @BeforeEach
-    public void setUp() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-        page = browser.newPage();
+    void setUpPage() {
         loginPage = new LoginPage(page);
     }
 
@@ -39,12 +34,5 @@ public class LoginTest {
         loginPage.clickLogin();
         
         assertTrue(page.textContent(".oxd-alert-content").contains(TestData.LOGIN_ERROR_MESSAGE),"Invalid login credentials!");
-    }
-
-    @AfterEach
-    public void tearDown() {
-        page.close();
-        browser.close();
-        playwright.close();
     }
 }
