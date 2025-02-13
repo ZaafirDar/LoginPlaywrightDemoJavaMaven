@@ -40,17 +40,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Optional: JUnit Vintage Engine (Only required if you need JUnit 4 tests) -->
-        <!--
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-            <optional>true</optional>
-        </dependency>
-        -->
-
         <!-- SLF4J for Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>

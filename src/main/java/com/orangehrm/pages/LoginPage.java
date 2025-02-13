@@ -5,37 +5,36 @@ import com.microsoft.playwright.Locator;
 import com.orangehrm.locators.LoginPageLocators;
 import com.orangehrm.data.TestData;
 
-public class LoginPage {
-    private final Page page;
-    private final Locator usernameField;
-    private final Locator passwordField;
-    private final Locator loginButton;
+public class LoginPage extends BasePage {
+    private final String usernameField    = LoginPageLocators.USERNAME_FIELD;
+    private final String passwordField    = LoginPageLocators.PASSWORD_FIELD;;
+    private final String loginButton      = LoginPageLocators.LOGIN_BUTTON;
+    private final String dashboardHeader  = LoginPageLocators.DASHBOARD_HEADER;
 
+     
     public LoginPage(Page page) {
-        this.page = page;
-        this.usernameField = page.locator(LoginPageLocators.USERNAME_FIELD);
-        this.passwordField = page.locator(LoginPageLocators.PASSWORD_FIELD);
-        this.loginButton = page.locator(LoginPageLocators.LOGIN_BUTTON);
+        super(page);
     }
 
+
     public void navigateToLoginPage() {
-        page.navigate(TestData.BASE_URL);
+        navigateTo(TestData.BASE_URL);
     }
 
     public void enterUsername(String username) {
-        usernameField.fill(username);
+        fill(usernameField,username);
     }
 
     public void enterPassword(String password) {
-        passwordField.fill(password);
+        fill(passwordField,password);
     }
 
     public void clickLogin() {
-        loginButton.click();
+        click(loginButton);
     }
 
     public boolean isLoginSuccessful() {
-        page.waitForSelector(LoginPageLocators.DASHBOARD_HEADER);
-        return page.isVisible(LoginPageLocators.DASHBOARD_HEADER);
+        waitForSelector(dashboardHeader);
+        return isVisible(dashboardHeader);
     }
 }
